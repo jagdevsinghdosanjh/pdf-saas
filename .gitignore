@@ -12,6 +12,7 @@ __pycache__/
 
 # Virtual environments
 .venv/
+.supabase-venv/
 venv/
 env/
 ENV/
