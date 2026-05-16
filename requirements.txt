@@ -1,0 +1,9 @@
+streamlit
+st-supabase-connection
+pypdf
+pikepdf
+pdf2image
+pytesseract
+Pillow
+stripe
+python-dotenv
