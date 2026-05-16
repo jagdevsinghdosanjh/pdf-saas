@@ -25,24 +25,19 @@ def signup_form():
     if st.button("Create account"):
         sb = get_client()
         res = sb.auth.sign_up({"email": email, "password": password})
-        if res.user is None:
-            st.error("Sign up failed")
-        else:
-            # create profile row
+        if res.user:
             sb.table("profiles").insert({
                 "id": res.user.id,
-                "email": email,
+                "email": email
             }).execute()
             st.success("Check your email to confirm, then log in.")
 
 def get_current_user():
-    sb_session = st.session_state.get("sb_session")
-    if not sb_session:
+    session = st.session_state.get("sb_session")
+    if not session:
         return None
-
     sb = get_client()
-    res = sb.auth.get_user(sb_session.access_token)
-    return res.user
+    return sb.auth.get_user(session.access_token).user
 
 def require_auth():
     user = get_current_user()
