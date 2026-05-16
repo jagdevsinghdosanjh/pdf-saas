@@ -1,0 +1,5 @@
+streamlit
+supabase
+pikepdf
+python-dotenv
+razorpay
