@@ -1,7 +1,7 @@
 import streamlit as st
-from core.auth import require_auth
-from core.plans import get_active_subscription_plan
-from services.pdf_compress import compress_pdf
+from version_1.core.auth import require_auth
+from version_1.core.plans import get_active_subscription_plan
+from version_1.services.pdf_compress import compress_pdf
 
 st.title("Compress PDF")
 

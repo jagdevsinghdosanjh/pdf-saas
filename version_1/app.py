@@ -1,6 +1,6 @@
 import streamlit as st
-from core.auth import require_auth
-from core.plans import get_active_subscription_plan
+from version_1.core.auth import require_auth
+from version_1.core.plans import get_active_subscription_plan
 
 st.set_page_config(page_title="PDF SaaS", page_icon="📄", layout="wide")
 

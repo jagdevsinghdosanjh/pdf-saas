@@ -1,6 +1,6 @@
 import streamlit as st
-from core.auth import require_auth
-from core.supabase_client import get_supabase
+from version_1.core.auth import require_auth
+from version_1.core.supabase_client import get_supabase
 
 st.title("Upgrade Your Plan")
 
