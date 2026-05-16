@@ -16,7 +16,7 @@ def login_form():
             st.error("Invalid credentials")
         else:
             st.session_state["sb_session"] = res.session
-            st.experimental_rerun()
+            st.rerun()
 
 def signup_form():
     st.subheader("Sign up")
