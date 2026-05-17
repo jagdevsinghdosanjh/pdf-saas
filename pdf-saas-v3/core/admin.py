@@ -1,10 +1,13 @@
 from .supabase_client import get_supabase
 from .models import User
 
-
-def require_admin(user: User):
-    if not user.is_admin:
+def require_admin(user):
+    if user.role not in ["admin", "superadmin"]:
         raise PermissionError("Admin access required.")
+
+# def require_admin(user: User):
+#     if not user.is_admin:
+#         raise PermissionError("Admin access required.")
 
 
 def get_all_users():
