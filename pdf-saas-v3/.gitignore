@@ -1,0 +1,103 @@
+###############################
+# Python
+###############################
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pdb
+*.egg-info/
+*.egg
+*.log
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+supabase-venv/
+
+# Jupyter
+.ipynb_checkpoints/
+
+
+###############################
+# Streamlit
+###############################
+.streamlit/secrets.toml
+.streamlit/state.json
+.streamlit/config.toml
+
+# Streamlit cache
+**/.streamlit/cache/
+**/.streamlit/cache/*
+
+
+###############################
+# Supabase
+###############################
+supabase/.temp/
+supabase/.branches/
+supabase/.config/
+supabase/functions/*/node_modules/
+supabase/functions/*/.npm/
+
+
+###############################
+# PDF Processing Temp Folders
+###############################
+uploads/
+output/
+processed/
+temp/
+tmp/
+cache/
+ocr_temp/
+
+
+###############################
+# Large sample files
+###############################
+*.pdf
+!assets/sample_pdfs/*
+
+
+###############################
+# OS Junk
+###############################
+.DS_Store
+Thumbs.db
+desktop.ini
+
+
+###############################
+# IDE / Editor
+###############################
+.vscode/
+.vscode/*
+.idea/
+*.code-workspace
+
+
+###############################
+# Environment / Secrets
+###############################
+.env
+.env.*
+*.env
+secrets.json
+
+
+###############################
+# Build / Distribution
+###############################
+build/
+dist/
+*.spec
+
+
+###############################
+# Logs
+###############################
+*.log
+logs/
