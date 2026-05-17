@@ -4,13 +4,23 @@ from datetime import datetime
 
 SubscriptionStatus = Literal["trialing", "active", "past_due", "canceled"]
 
-
 @dataclass
 class User:
     id: str
     email: str
     full_name: Optional[str] = None
+
+    # NEW FIELDS
     is_admin: bool = False
+    role: str = "user"          # user, support, admin, superadmin
+    disabled: bool = False      # admin can disable accounts
+
+# @dataclass
+# class User:
+#     id: str
+#     email: str
+#     full_name: Optional[str] = None
+#     is_admin: bool = False
 
 
 @dataclass

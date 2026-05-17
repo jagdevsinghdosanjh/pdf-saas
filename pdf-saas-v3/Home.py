@@ -37,6 +37,8 @@ def main():
     st.sidebar.markdown("---")
     st.sidebar.page_link("pages/40_Admin_Dashboard.py", label="🛡️ Admin Dashboard")
     st.sidebar.page_link("pages/41_Admin_Users.py", label="👥 Admin Users")
+    st.sidebar.page_link("pages/42_Admin_Analytics.py", label="📈 Admin Analytics")
+
 
     st.title("Welcome to PDF SaaS v3")
     st.write("Hybrid dashboard + tools. Use the sidebar to access all features.")
