@@ -1,6 +1,6 @@
 import streamlit as st
 from core.auth import require_auth, logout
-from core.plans import get_active_subscription_plan
+from core.plan import get_active_subscription_plan
 from core.usage import log_usage
 
 
