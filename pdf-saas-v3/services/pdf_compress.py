@@ -7,7 +7,6 @@ import pikepdf
 
 from core.compression_presets import COMPRESSION_PRESETS
 
-
 def compress_with_pikepdf(pdf_bytes: bytes, level: str = "medium") -> tuple[bytes, str]:
     """Pure Python PDF compression using PikePDF only."""
     settings = {
