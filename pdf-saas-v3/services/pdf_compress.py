@@ -7,7 +7,9 @@ import pikepdf
 
 from core.compression_presets import COMPRESSION_PRESETS
 
+
 def compress_with_pikepdf(pdf_bytes: bytes, level: str = "medium") -> tuple[bytes, str]:
+    """Pure Python PDF compression using PikePDF only."""
     settings = {
         "high": pikepdf.ObjectStreamMode.generate,
         "medium": pikepdf.ObjectStreamMode.preserve,
@@ -30,6 +32,7 @@ def compress_with_pikepdf(pdf_bytes: bytes, level: str = "medium") -> tuple[byte
 
 
 def compress_with_ghostscript(pdf_bytes: bytes, level: str, gs_path: str) -> tuple[bytes, str]:
+    """Dense PDF compression using Ghostscript + PikePDF."""
     if level not in COMPRESSION_PRESETS:
         level = "medium"
 
@@ -78,9 +81,13 @@ def compress_with_ghostscript(pdf_bytes: bytes, level: str, gs_path: str) -> tup
             linearize=True,
         )
 
+    # Clean up temp files safely
     for f in [tmp_in_path, tmp_out_path]:
-        try: os.remove(f)
-        except: pass
+        try:
+            os.remove(f)
+        except Exception:
+            # Ignore errors if file already removed
+            pass
 
     return output_pdf.getvalue(), "Ghostscript + PikePDF"
 
