@@ -1,0 +1,5 @@
+Test API Key
+rzp_test_SwTIHoGFpPMZtj
+
+Test Key Secret
+EzIFqqHHyLcI9g6ZhAF1RBlg
