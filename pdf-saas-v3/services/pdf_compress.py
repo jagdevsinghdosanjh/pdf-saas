@@ -16,7 +16,7 @@ def compress_with_pikepdf(pdf_bytes: bytes, level: str = "medium") -> bytes:
     settings = {
         "high": pikepdf.ObjectStreamMode.generate,
         "medium": pikepdf.ObjectStreamMode.preserve,
-        "aggressive": pikepdf.ObjectStreamMode.disabled,
+        "aggressive": pikepdf.ObjectStreamMode.disable,
     }
     mode = settings.get(level, pikepdf.ObjectStreamMode.preserve)
 
