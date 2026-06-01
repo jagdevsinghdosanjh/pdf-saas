@@ -28,20 +28,36 @@ def main():
             return
 
         if st.button("Compress"):
-            with st.spinner("Compressing..."):
-                out_bytes = compress_pdf(pdf_bytes)
-                log_usage(
-                    user,
-                    "compress_pdf",
-                    {"input_mb": size_mb, "output_mb": len(out_bytes) / (1024 * 1024)},
-                )
-            st.success("Compression complete.")
-            st.download_button(
-                "Download compressed PDF",
-                out_bytes,
-                "compressed.pdf",
-                mime="application/pdf",
-            )
+    with st.spinner("Compressing ..."):
+        out_bytes, method, in_mb, out_mb = compress_pdf(pdf_bytes, level="medium")
+        log_usage(user, "compress_pdf", {"method": method, "input_mb": in_mb, "output_mb": out_mb})
+
+        st.success(f"Compression complete using {method}.")
+        st.caption(f"Size reduced from {in_mb:.2f} MB → {out_mb:.2f} MB")
+
+        st.download_button(
+            "Download compressed PDF",
+            out_bytes,
+            "compressed.pdf",
+            mime="application/pdf",
+        )
+
+
+        # if st.button("Compress"):
+        #     with st.spinner("Compressing..."):
+        #         out_bytes = compress_pdf(pdf_bytes)
+        #         log_usage(
+        #             user,
+        #             "compress_pdf",
+        #             {"input_mb": size_mb, "output_mb": len(out_bytes) / (1024 * 1024)},
+        #         )
+        #     st.success("Compression complete.")
+        #     st.download_button(
+        #         "Download compressed PDF",
+        #         out_bytes,
+        #         "compressed.pdf",
+        #         mime="application/pdf",
+        #     )
 
 
 if __name__ == "__main__":
